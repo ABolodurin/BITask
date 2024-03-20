@@ -9,6 +9,7 @@ public class AppServer {
     public static void main(String[] args) throws InterruptedException, IOException {
         Server server = ServerBuilder
                 .forPort(8080)
+                .addService(new AppServiceImpl())
                 .build();
 
         server.start();
