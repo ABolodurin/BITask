@@ -9,8 +9,9 @@ import ru.bolodurin.bitask.AppServiceOuterClass.AppResponse;
 public class AppServiceImpl extends AppServiceImplBase {
     @Override
     public void doTask(AppRequest request, StreamObserver<AppResponse> responseObserver) {
-        if (request.getFirstValue() < 0 || request.getLastValue() < request.getFirstValue())
+        if (request.getFirstValue() < 0 || request.getLastValue() < request.getFirstValue()) {
             throw new RuntimeException("Service error");
+        }
 
         int firstValue = request.getFirstValue();
 
